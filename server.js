@@ -4,6 +4,8 @@ var bodyParser = require('body-parser');
 var app = express();
 var mqtt = require('mqtt')
 
+var data = [{}]; // empty JSON object
+
 var options = {
     port: 17657, 
     host: 'mqtt://m16.cloudmqtt.com',
@@ -21,9 +23,15 @@ var options = {
 var client = mqtt.connect('mqtt://m16.cloudmqtt.com', options);
 client.on('connect', function() { 
     console.log('mqtt connected');
-    client.subscribe('Calvin/Parkinglot14/row1/spot1', function() {
+    data = [{}];
+    client.subscribe('Calvin/Parkinglot14/row1/#', function() {
         client.on('message', function(topic, message, packet) {
             console.log('Received '+ message + " on " + topic + " ");
+            if (message == "available") {
+                data += 0; 
+            } else {
+                data +=1; 
+            }
         });
     });
 })
