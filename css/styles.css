@@ -1,0 +1,115 @@
+body {
+    background: #fff;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+    margin: 0;
+    padding: 30px;
+}
+
+a {
+    color: #4183c4;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+code {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    font-family: "Bitstream Vera Sans Mono", Consolas, Courier, monospace;
+    font-size: 12px;
+    margin: 0 2px;
+    padding: 0 5px;
+}
+
+h1, h2, h3, h4 {
+    font-weight: bold;
+    padding: 0;
+}
+
+h1 {
+    font-size: 2.5em;
+    text-align: center;
+}
+
+h2 {
+    border-bottom: 1px solid #eee;
+    font-size: 2em;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+h4 {
+    font-size: 1.2em;
+}
+
+p, ul {
+    margin: 15px 0;
+}
+
+ul {
+    padding-left: 30px;
+}
+
+.loginBox {
+    background: "#f4f4f4";
+}
+
+.shadow {
+    -webkit-border-radius: 0% 0% 100% 100% / 0% 0% 8px 8px;
+    -webkit-box-shadow: rgba(0, 0, 0,.30) 0 2px 3px;
+}
+.container {
+    margin: 0 auto;
+    width: 50vh;
+    background: #F2F2F2;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 2px #fff inset,
+    -1px -1px 2px #fff inset;
+    border-radius: 3px/6px;
+}
+
+.obj-center {
+    text-align: center;
+}
+
+.button-top-right {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+}
+.sell-button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    width: 200px;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.cancel-button {
+    background-color: #f44336;
+    border: none;
+    color: white;
+    width: 200px;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
