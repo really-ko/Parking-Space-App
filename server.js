@@ -1,18 +1,24 @@
-var fs = require('fs');
-var path = require('path');
-var express = require('express');
-var bodyParser = require('body-parser');
-var app = express();
+const http = require('http');
+const static = require('node-static');
+const file = new static.Server('./');
 
+var mqtt = require('mqtt')
+var options = {
+    port: 3000, 
+    host: 'mqtt://m11.cloudmqtt.com',
+    clientId: 'mqttjs_' + Math.random().toString(16).substr(2,8),
+    username: 'hgyfcdvp',
+    password: '7xO7C0uC6s-U',
+    keepalive: 60,
+    reconnectPeriod: 1000,
+    protocolId: 'MQIsdp',
+    protocolVersion: 3,
+    clean: true,
+    encoding: 'utf8'
+};
 
-var SPACES = path.join(__dirname, 'comments.json');
-
-app.set('port', (process.env.PORT || 3000));
-
-app.use('/', express.static(path.join(__dirname, 'dist')));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
-
-app.listen(app.get('port'), function () {
-    console.log('Server started: http://localhost:' + app.get('port') + '/');
-});
+const server = http.createServer((req,res) => {
+    req.addListener('end', () => file.serve(req, res)).resume();
+  });
+  const port = 3000;
+  server.listen(port, () => console.log(`Server running at http://localhost:${port}`));
